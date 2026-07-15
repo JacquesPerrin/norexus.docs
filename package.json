@@ -11,6 +11,8 @@
     "postinstall": "fumadocs-mdx"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.12.3",
+    "@supabase/supabase-js": "^2.110.5",
     "cnfast": "^0.0.8",
     "fumadocs-core": "16.11.4",
     "fumadocs-mdx": "15.1.1",
