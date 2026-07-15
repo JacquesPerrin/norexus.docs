@@ -1,0 +1,32 @@
+---
+title: NOREXUS ID
+description: Account identity, organization identity, security state, and service access.
+---
+
+NOREXUS ID is the signed-in identity management surface.
+
+## Owns
+
+- Account UI
+- Organization UI
+- Security settings UI
+- Billing/account identity UI
+- Audit and service-access UI
+- Signed-in identity management
+
+## Relationship to Auth
+
+Auth decides how users sign in and approve access. ID shows and manages the identity state after sign-in.
+
+For local development, keep chooser state and permission/consent state separate:
+
+- The account chooser can appear every login.
+- Permissions can remain remembered once approved.
+- Company-specific identity preferences belong in explicit ID UI.
+
+## Identity services
+
+| Service | Domain | Purpose |
+| --- | --- | --- |
+| Auth | `auth.norexus.app` | Login, pairing, approval, callback/session exchange. |
+| ID | `id.norexus.app` | Account, organization, security, service access, and identity settings. |

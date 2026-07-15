@@ -1,0 +1,49 @@
+---
+title: NOREXUS CLI
+description: Install and use the terminal-first NOREXUS command layer.
+---
+
+NOREXUS CLI (`nrx`) is the terminal-first control plane for local NOREXUS work.
+
+It routes prompts to local AI CLIs, attaches MCP presets, checks developer state, and pairs with NOREXUS Auth without requiring local Supabase keys.
+
+## Install
+
+```bash
+npm install -g github:JacquesPerrin/norexus.cli
+nrx --version
+```
+
+## Pair with Auth
+
+```bash
+nrx login
+nrx whoami --live
+```
+
+`nrx login` opens an Auth pairing URL like:
+
+```txt
+https://auth.norexus.app/cli/<code>
+```
+
+After approval, the CLI stores a local session for developer/product access.
+
+## Common commands
+
+```bash
+nrx dashboard
+nrx ask "fix the login bug"
+nrx route "plan the repo architecture" --mcp shadcn --mcp supabase
+nrx chat --tool hermes
+nrx mcp presets
+nrx mcp status
+nrx doctor
+```
+
+## Landing page
+
+The CLI landing page at `cli.norexus.app` should look like the actual terminal header and expose two actions:
+
+- `Docs` -> `https://docs.norexus.app/cli`
+- `Copy link` -> copies `npm install -g github:JacquesPerrin/norexus.cli`

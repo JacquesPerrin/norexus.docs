@@ -1,0 +1,14 @@
+{
+  "title": "NOREXUS Docs",
+  "description": "Documentation for NOREXUS CLI, Auth, and ID",
+  "root": true,
+  "pages": [
+    "index",
+    "---Products---",
+    "cli",
+    "auth",
+    "id",
+    "---Agents---",
+    "agent-context"
+  ]
+}

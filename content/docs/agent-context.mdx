@@ -1,0 +1,32 @@
+---
+title: Agent context
+description: How coding agents should work in the NOREXUS docs repo.
+---
+
+Use this page when handing the docs repo to another coding agent.
+
+## Stack
+
+- Fumadocs
+- Next.js
+- MDX under `content/docs`
+
+## Edit rules
+
+- Put docs pages in `content/docs`.
+- Add every page to `content/docs/meta.json`.
+- Configure branding, navigation, and GitHub links in `lib/shared.ts` and `lib/layout.shared.tsx`.
+- Do not edit generated `.source`, `.next`, `node_modules`, or package internals.
+- Keep product ownership boundaries clear:
+  - `norexus.cli` owns `nrx` behavior and terminal workflows.
+  - `NOREXUS.AUTH` owns login, session exchange, and CLI pairing.
+  - `Norexus.ID` owns signed-in identity management.
+
+## Verification
+
+```bash
+pnpm build
+pnpm dev
+```
+
+Check `/docs`, `/docs/cli`, `/llms.txt`, and `/llms-full.txt` after content or routing changes.

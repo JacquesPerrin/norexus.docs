@@ -1,0 +1,36 @@
+---
+title: NOREXUS Auth
+description: Authentication, CLI pairing, and session exchange for NOREXUS.
+---
+
+NOREXUS Auth owns the sign-in and approval surface for NOREXUS users and developer tools.
+
+## Owns
+
+- Login and signup screens
+- OAuth, magic-link, password, and passkey flows
+- Callback and session exchange
+- Shared cookies
+- CLI approval pages
+- CLI auth HTTP APIs
+- Auth email templates
+
+## CLI pairing flow
+
+```mermaid
+sequenceDiagram
+  participant CLI as nrx
+  participant Auth as auth.norexus.app
+  participant User as User
+
+  CLI->>Auth: POST /api/cli/start
+  Auth-->>CLI: user code + verification URL
+  CLI-->>User: Open /cli/<code>
+  User->>Auth: Sign in and approve
+  CLI->>Auth: GET /api/cli/poll
+  Auth-->>CLI: session token + account metadata
+```
+
+## Boundary
+
+CLI users should not need Supabase keys. Service-role keys stay server-only inside Auth-owned server paths.
