@@ -5,8 +5,8 @@ Plain Fumadocs documentation site for NOREXUS CLI, Auth, and ID.
 ## Development
 
 ```bash
-pnpm install
-pnpm dev
+bun install
+bun run dev
 ```
 
 Open `http://localhost:3000/docs`.
@@ -14,7 +14,7 @@ Open `http://localhost:3000/docs`.
 ## Build
 
 ```bash
-pnpm build
+bun run build
 ```
 
 ## Content
